@@ -1,0 +1,21 @@
+name: Ejecutar Script de Phyton
+
+on:
+  push: 
+   branches: [Main]
+
+jobs: 
+  run-phyton:
+    runs-on:ubuntu-laslest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/chekout@v3
+
+      - name: Instalar Phyton
+        uses: actions/setup-python@v4
+        with:
+         python-version: ´3.10´ #puedes elegir la version que necesites
+
+      - name: Ejecutar script.py
+        run: python script.py
